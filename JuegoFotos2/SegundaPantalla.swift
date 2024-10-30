@@ -11,30 +11,44 @@ class SegundaPantalla: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+       
         iniciarFotos()
+        resultadosCorrectos.removeFirst()
+        
         // Do any additional setup after loading the view.
     }
     @IBOutlet weak var ImagenModificable: UIImageView!
 
+    @IBAction func ButtonContinue(_ sender: Any) {
+    }
     
     var contador:Bool = true
     
     func iniciarFotos(){
+    
+
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in
-            self.cambiarFotos()
+            if self.resultadosCorrectos.count <= 4{self.cambiarFotos()}
+            else{
+                print("Salio del supuesto bucle")
+                
+            
+            }
+            
         }
+        
     }
     func cambiarFotos(){
         
         ImagenModificable.image = UIImage(named: randomizadorDeFotos())
-        print("Se ha repetido 1 vez")
+        
+        // print("Se ha repetido 1 vez")
     }
     
     func randomizadorDeFotos()->String{
         
-        var fotorandom = ""
-        let Fotos = [
+      
+        var Fotos = [
             "MarioHub_Luigi",
             "AnimalCrossing",
             "AnimalCrossing2",
@@ -43,15 +57,24 @@ class SegundaPantalla: UIViewController {
             "MarioHub",
             "MarioKart1",
             "Mariokart2",
-            "nintendo-switch-sports-2690261",
+            "nintendoSwichtSport",
             "pokemon-iron_valiant",
             "pokemon-walking_wake",
-            "switch_nintendoswitchsports_screen_06"
-            
+            "switchSport"
         ]
         
-        return fotorandom
+        let fotoRandom = Fotos.randomElement()!
+        
+        if Fotos.contains(fotoRandom){
+        
+        }
+      
+        resultadosCorrectos.append(fotoRandom)
+        print(resultadosCorrectos)
+        return fotoRandom
     }
+    
+    var resultadosCorrectos = [""]
 }
 
 

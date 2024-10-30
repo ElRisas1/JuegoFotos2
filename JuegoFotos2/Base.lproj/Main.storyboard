@@ -54,13 +54,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MarioHub" translatesAutoresizingMaskIntoConstraints="NO" id="fdl-to-FTX">
-                                <rect key="frame" x="76" y="203" width="240" height="257"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MarioHub" translatesAutoresizingMaskIntoConstraints="NO" id="fdl-to-FTX">
+                                <rect key="frame" x="76" y="203" width="240" height="271"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOU-4y-nkg">
+                                <rect key="frame" x="144" y="631" width="104" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="bV1-kt-5As"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Continuar"/>
+                                <connections>
+                                    <action selector="ButtonContinue:" destination="IyG-fe-TB1" eventType="touchUpInside" id="Ers-l2-eBV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bGp-2E-BHS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bGp-2E-BHS" firstAttribute="bottom" secondItem="fdl-to-FTX" secondAttribute="bottom" constant="368" id="1Yi-zW-UFU"/>
+                            <constraint firstItem="bGp-2E-BHS" firstAttribute="bottom" secondItem="XOU-4y-nkg" secondAttribute="bottom" constant="166" id="3dr-Nf-NED"/>
+                            <constraint firstItem="fdl-to-FTX" firstAttribute="top" secondItem="bGp-2E-BHS" secondAttribute="top" constant="203" id="4zS-Oh-zTf"/>
+                            <constraint firstItem="fdl-to-FTX" firstAttribute="leading" secondItem="bGp-2E-BHS" secondAttribute="leading" constant="76" id="7rz-7H-XGO"/>
+                            <constraint firstItem="fdl-to-FTX" firstAttribute="top" secondItem="bGp-2E-BHS" secondAttribute="top" constant="203" id="8PY-1o-y5b"/>
+                            <constraint firstItem="XOU-4y-nkg" firstAttribute="top" secondItem="fdl-to-FTX" secondAttribute="bottom" constant="167" id="Bot-6M-myX"/>
+                            <constraint firstItem="fdl-to-FTX" firstAttribute="leading" secondItem="bGp-2E-BHS" secondAttribute="leading" constant="76" id="HuG-1E-P4s"/>
+                            <constraint firstItem="XOU-4y-nkg" firstAttribute="centerX" secondItem="fdl-to-FTX" secondAttribute="centerX" id="NAt-7Q-muh"/>
+                            <constraint firstItem="XOU-4y-nkg" firstAttribute="top" secondItem="fdl-to-FTX" secondAttribute="bottom" constant="167" id="e7c-F3-rIU"/>
+                            <constraint firstItem="bGp-2E-BHS" firstAttribute="trailing" secondItem="fdl-to-FTX" secondAttribute="trailing" constant="77" id="oRy-f2-5FW"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="ImagenModificable" destination="fdl-to-FTX" id="Zfh-3o-egx"/>
